@@ -1,5 +1,3 @@
-require("babel-polyfill");
-
 const justPromise = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

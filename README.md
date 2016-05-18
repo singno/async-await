@@ -1,10 +1,11 @@
 #####package.json依赖
 ```
-"dependencies": {
-    "babel-plugin-syntax-async-functions": "^6.1.4",
-    "babel-plugin-transform-regenerator": "^6.1.4",
-    "babel-preset-es2015": "^6.1.4",
-    "babel-polyfill": "^6.1.4"
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-plugin-syntax-async-functions": "^6.8.0",
+    "babel-plugin-transform-regenerator": "^6.8.0",
+    "babel-preset-es2015": "^6.8.0",
+    "babel-runtime": "^6.8.0"
   }
 ```
 
@@ -18,14 +19,12 @@ npm install
 ```
 {
   "presets": ["es2015"],
-  "plugins": ["syntax-async-functions","transform-regenerator"]
+  "plugins": ["syntax-async-functions","transform-regenerator","transform-runtime"]
 }
 ```
 
 #####运行`npm start`
 ```
-require("babel-polyfill");
-
 const justPromise = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -48,7 +47,7 @@ babel-plugin-syntax-async-functions：允许babel解析async语法
 
 babel-plugin-transform-regenerator：转换async和generator语法为通用js语法
 
-babel-polyfill: 转换后的文件执行依赖该模块
+babel-plugin-transform-runtime、babel-runtime: 省去引入babel-polyfill的麻烦
 
 babel-preset-es2015：包含基本的plugins
 

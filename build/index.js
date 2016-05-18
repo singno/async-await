@@ -1,9 +1,17 @@
 'use strict';
 
-require("babel-polyfill");
+var _regenerator = require('babel-runtime/regenerator');
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _promise = require('babel-runtime/core-js/promise');
+
+var _promise2 = _interopRequireDefault(_promise);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var justPromise = function justPromise() {
-  return new Promise(function (resolve, reject) {
+  return new _promise2.default(function (resolve, reject) {
     setTimeout(function () {
       resolve('Hello world');
     }, 1000);
@@ -12,13 +20,13 @@ var justPromise = function justPromise() {
 
 var testAsync = function _callee() {
   var t;
-  return regeneratorRuntime.async(function _callee$(_context) {
+  return _regenerator2.default.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           console.log('Waiting...');
           _context.next = 3;
-          return regeneratorRuntime.awrap(justPromise());
+          return _regenerator2.default.awrap(justPromise());
 
         case 3:
           t = _context.sent;
