@@ -1,4 +1,4 @@
-const justPromise = () => {
+const p = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('Hello world');
@@ -6,10 +6,10 @@ const justPromise = () => {
   });
 };
 
-const testAsync = async () => {
+const test = async () => {
   console.log('Waiting...');
-  const t = await justPromise();
+  const t = await p();
   console.log(t);
 };
 
-testAsync();
+test();

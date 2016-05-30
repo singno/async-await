@@ -10,7 +10,7 @@ var _promise2 = _interopRequireDefault(_promise);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var justPromise = function justPromise() {
+var p = function p() {
   return new _promise2.default(function (resolve, reject) {
     setTimeout(function () {
       resolve('Hello world');
@@ -18,7 +18,7 @@ var justPromise = function justPromise() {
   });
 };
 
-var testAsync = function _callee() {
+var test = function _callee() {
   var t;
   return _regenerator2.default.async(function _callee$(_context) {
     while (1) {
@@ -26,7 +26,7 @@ var testAsync = function _callee() {
         case 0:
           console.log('Waiting...');
           _context.next = 3;
-          return _regenerator2.default.awrap(justPromise());
+          return _regenerator2.default.awrap(p());
 
         case 3:
           t = _context.sent;
@@ -41,4 +41,4 @@ var testAsync = function _callee() {
   }, null, undefined);
 };
 
-testAsync();
+test();
